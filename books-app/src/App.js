@@ -102,7 +102,7 @@ function App() {
         </button>
       </div>
 
-      {/* Filtruotu knygu atvaizdavimas */}
+      {/* Atrinktu knygu atvaizdavimas */}
       <h4>KNYGŲ SĄRAŠAS</h4>
       <div className='books-container'>
       <ul>

@@ -20,7 +20,7 @@ with app.app_context():
 @app.route('/books', methods=['GET'])
 def get_books():
     # Gauti paieškos parametrą iš URL (pvz., ?search=Harry)
-    search_term = request.args.get('search', '').lower()  # default 'search' parameter is an empty string
+    search_term = request.args.get('search', '').lower()
 
     if search_term:
         # Paieška pagal pavadinimą ir autorių
@@ -63,24 +63,6 @@ def add_book():
     db.session.commit()
     return jsonify(new_book.to_dict()), 201
 
-# @app.route('/books/<int:book_id>', methods=['PUT'])
-# def update_book(book_id):
-#     """
-#     Atnaujinti knyga
-#     """
-#     book = Book.query.get(book_id)
-#     if book is None:
-#         return jsonify({'error': 'Book not found'}), 404
-#
-#     data = request.json
-#     book.title = data.get('title', book.title)
-#     book.author = data.get('author', book.author)
-#     book.year = data.get('year', book.year)
-#
-#     db.session.commit()
-#
-#     return jsonify(book.to_dict())
-
 @app.route('/books/<int:id>', methods=['PUT'])
 def edit_book(id):
     data = request.get_json()
@@ -100,8 +82,8 @@ def delete_book(id):
     if book:
         db.session.delete(book)
         db.session.commit()
-        return jsonify({'message': 'Book deleted successfully'})
-    return jsonify({'message': 'Book not found'}), 404
+        return jsonify({'message': 'Knyga ištrinta sekmingai'})
+    return jsonify({'message': 'Knyga nerasta'}), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
