@@ -67,7 +67,7 @@ function App() {
 
       <input
         type="text"
-        placeholder="Paieška pagal pavadinimą arga autorių"
+        placeholder="Paieška pagal pavadinimą arba autorių"
         value={searchTerm}
         onChange={handleSearchChange}
       />
