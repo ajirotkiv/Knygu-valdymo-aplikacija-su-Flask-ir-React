@@ -15,7 +15,7 @@ html, body {
   max-width: 1000px; 
   max-height: 1000px; 
   background-color: #fff; 
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -32,7 +32,6 @@ h1 {
   font-size: 24px;
 }
 
-
 input {
   width: 100%;
   padding: 10px;
@@ -42,7 +41,6 @@ input {
   font-size: 16px;
   box-sizing: border-box;
 }
-
 
 button {
   width: 100%;
@@ -83,7 +81,7 @@ ul {
 li {
   background-color: #f9f9f9;
   margin: 10px 0;
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
@@ -99,4 +97,21 @@ button {
 
 button:hover {
   background-color: #14313f; 
+}
+
+@media (max-width: 600px) {
+  .my-container {
+    width: 100vw;
+    height: auto; 
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px; 
+  }
+
+  input, button {
+    padding: 10px;
+    font-size: 14px;
+  }
 }
